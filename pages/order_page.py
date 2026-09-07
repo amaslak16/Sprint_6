@@ -41,3 +41,10 @@ class OrderPage(BasePage):
     @allure.step("Проверить, что заказ успешно оформлен")
     def is_success_modal_displayed(self):
         return self.find_visible(OrderPageLocators.SUCCESS_MODAL).is_displayed()
+
+    @allure.step("Оформить заказ")
+    def create_order(self, order):
+        self.fill_customer_data(order)
+        self.click_next_button()
+        self.fill_rent_data(order)
+        self.submit_order()
