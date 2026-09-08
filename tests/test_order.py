@@ -43,13 +43,13 @@ class TestOrder:
 
         assert header.is_scooter_page_opened(BASE_URL)
 
-    @allure.title("Логотип Яндекса открывает главную страницу Дзена в новом окне")
-    def test_yandex_logo_opens_dzen_in_new_window(self, driver):
+    @allure.title("Логотип Яндекса открывает главную страницу Яндекса в новом окне")
+    def test_yandex_logo_opens_yandex_in_new_window(self, driver):
         main_page = MainPage(driver)
         header = Header(driver)
         main_page.open(BASE_URL)
         main_page.accept_cookies()
 
-        header.open_dzen_by_yandex_logo()
+        header.open_yandex_by_yandex_logo()
 
-        assert header.is_dzen_opened()
+        assert header.is_yandex_opened()

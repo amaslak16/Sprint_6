@@ -45,4 +45,7 @@ class OrderPageLocators:
 
 class HeaderLocators:
     SCOOTER_LOGO = (By.CLASS_NAME, "Header_LogoScooter__3lsAR")
-    YANDEX_LOGO = (By.CLASS_NAME, "Header_LogoYandex__3TSOI")
+    YANDEX_LOGO = (
+        By.XPATH,
+        ".//*[contains(@class, 'Header_LogoYandex')]/ancestor-or-self::a[1]",
+    )

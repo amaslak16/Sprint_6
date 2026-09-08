@@ -21,7 +21,7 @@ class OrderPage(BasePage):
 
     @allure.step("Заполнить данные аренды")
     def fill_rent_data(self, order):
-        self.fill(OrderPageLocators.DELIVERY_DATE_INPUT, order["date"])
+        self.fill_and_press_enter(OrderPageLocators.DELIVERY_DATE_INPUT, order["date"])
         self.click(OrderPageLocators.RENT_PERIOD_DROPDOWN)
         period_locator = self.format_locator(OrderPageLocators.RENT_PERIOD_OPTION, period=order["period"])
         self.click(period_locator)
